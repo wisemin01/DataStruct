@@ -51,11 +51,26 @@ namespace MyStl {
 				return !(*this == other);
 			}
 
-			void operator++()
+			const iterator& operator++()
 			{
 				_pNode = _pNode->_next;
+				return *this;
 			}
 
+			const iterator operator++(int)
+			{
+				iterator iter(_pNode);
+				_pNode = _pNode->_next;
+				return iter;
+			}
+
+			const iterator operator+ (const int& value)
+			{
+				for (int i = 0; i < value; i++)
+					_pNode = _pNode->_next;
+
+				return iterator(_pNode);
+			}
 		};
 	private:
 		_Node* _begin_node = nullptr;
@@ -80,17 +95,20 @@ namespace MyStl {
 			return *_end_node->_prev->_data;
 		}
 
-		_Node& erase(_Node& _where)
+		const iterator erase(const iterator& _where)
 		{
-			if (_where._data)
-				delete _where._data;
+			_Node* _node = _where._pNode;
+			iterator next = iterator(_where._pNode->_next);
 
-			_Node* _this = _where._prev->_next;
+			if (_node->_data)
+				delete _node->_data;
 
-			_where._prev->_next = _where._next;
-			_where._next->_prev = _where._prev;
+			_node->_prev->_next = _node->_next;
+			_node->_next->_prev = _node->_prev;
 
-			delete _this;
+			delete _node;
+
+			return next;
 		}
 
 		void push_back(T _data);

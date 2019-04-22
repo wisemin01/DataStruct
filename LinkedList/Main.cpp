@@ -11,5 +11,21 @@ using namespace std;
 int main()
 {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+
+	list<int> li = { 1,2,3,4,5,6,7,8,9,10 };
+
+	for (auto iter = li.begin(); iter != li.end();)
+	{
+		int num = *iter;
+
+		if (num % 2 == 0) {
+			cout << num << endl;
+			iter++;
+		}
+		else
+		{
+			iter = li.erase(iter);
+		}
+	}
 }
 
