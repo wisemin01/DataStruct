@@ -1,0 +1,4 @@
+﻿  LinkedList.cpp
+D:\Programing project\[ 콘솔 ]\LinkedList\LinkedList\list.h(66): warning C4172: 지역 변수 또는 임시: iter의 주소를 반환하고 있습니다.
+D:\Programing project\[ 콘솔 ]\LinkedList\LinkedList\list.h(70): warning C4172: 지역 변수 또는 임시: iter의 주소를 반환하고 있습니다.
+  LinkedList.vcxproj -> D:\Programing project\[ 콘솔 ]\LinkedList\Debug\LinkedList.exe
