@@ -1,0 +1,3 @@
+﻿  Main.cpp
+c:\users\admin\desktop\datastruct\datastruct\linkedlist\main.cpp(16): warning C4101: 'asd' :참조되지 않은 지역 변수입니다.
+  LinkedList.vcxproj -> C:\Users\Admin\Desktop\DataStruct\DataStruct\x64\Debug\DataStruct.exe
